@@ -1,0 +1,19 @@
+id: mdk
+user: mdk
+
+file_client: local
+
+file_roots:
+  base:
+    - /var/salt/base
+
+pillar_roots:
+  base:
+    - /var/salt/pillar
+
+#module_dirs:
+#  - /usr/lib/python2.7/site-packages/salt/modules
+#
+#states_dirs:
+#  - /usr/lib/python2.7/site-packages/salt/states
+

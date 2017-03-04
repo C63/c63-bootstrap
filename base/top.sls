@@ -1,0 +1,4 @@
+base:
+  'mdk':
+    - vpc
+
