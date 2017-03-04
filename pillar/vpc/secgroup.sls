@@ -1,8 +1,9 @@
 {% from 'vpc/public_constants.sls' import cidr_internal %}
+{% from 'vpc/public_constants.sls' import vpc_name %}
 
 vpc:
   secgroup:
-    - name: nat-egress
+    - name: {{ vpc_name }}-nat-egress
       description: Outgoing traffic from vpc
       rule:
         - ip_protocol: tcp
@@ -13,7 +14,7 @@ vpc:
           from_port: 443
           to_port: 443
           cidr_ip: {{ cidr_internal }}
-    - name: default-internal
+    - name: {{ vpc_name }}-default-internal
       description: default to allow http(s), ssh, icmp, salt from inside vpc
       rule:
         - ip_protocol: tcp

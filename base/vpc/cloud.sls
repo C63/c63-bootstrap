@@ -1,3 +1,4 @@
+{% set vpc_name = salt['pillar.get']('vpc:name') %}
 {% set region = salt['pillar.get']('vpc:region') %}
 {% set key_name = salt['pillar.get']('vpc:cloud_key') %}
 
@@ -21,6 +22,8 @@
     - replace: True
     - makedirs: True
     - create: True
+    - require:
+      - file: /etc/salt/cloud.providers.d/ec2.provider.conf
 
 /etc/salt/cloud.map.d/map.conf:
   file.managed:
@@ -29,8 +32,4 @@
     - replace: True
     - makedirs: True
     - create: True
-
-# TODO: should we call below command:
-# salt-cloud -y -m /etc/salt/cloud.maps.d/map.conf -P
-# meaning parallel bootstrap all instances in map profiles
 

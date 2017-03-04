@@ -5,7 +5,7 @@
 
 Ensure public route table exists:
   boto_vpc.route_table_present:
-    - name: c63-public-table
+    - name: {{ vpc_name }}-public-table
     - vpc_name: {{ vpc_name }}
     - routes:
       - destination_cidr_block: 0.0.0.0/0

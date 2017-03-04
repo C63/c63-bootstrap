@@ -17,3 +17,9 @@ sudo ln -s $CWD/pillar /var/salt 2> /dev/null
 
 # apply salt states in standalone mode
 salt-call state.apply
+
+echo "please fix AWS credentials in /etc/salt/cloud.providers.d/ec2.provider.conf
+then run this command below:
+    salt-call state.sls vpc.finalize
+It will boot up core instances and fix the main route table
+"
