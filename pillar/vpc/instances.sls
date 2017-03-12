@@ -8,7 +8,7 @@ vpc:
   instances:
     - name: {{ vpc_name }}-nat
       image_id: {{ region_ami.openbsd.id }}
-      private_ip_address: {{ cidr_prefix }}.0.99
+      private_ip_address: {{ cidr_prefix }}.0.5
       size: t2.micro
       subnet: public
       secgroup:
