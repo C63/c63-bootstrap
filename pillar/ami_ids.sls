@@ -6,6 +6,8 @@
       id: 'ami-5900cc36'
     nat:
       id: 'ami-7d0ec112'
+    openbsd:
+      id: 'ami-07c61168'
 {% endload %}
 
 {% from 'vpc/public_constants.sls' import vpc_region %}
